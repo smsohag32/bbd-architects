@@ -411,7 +411,7 @@ nav ul li a:hover {
 
 .our-sponsors .sponsors-des {
     text-align: center;
-    padding: 0 100px;
+    padding: 0 150px;
     margin-bottom: 30px;
     color: var(--gray);
     font-size: 1rem;
@@ -552,6 +552,10 @@ nav ul li a:hover {
         flex-direction: column;
         gap: 20px;
     }
+    .our-sponsors .sponsors-des {
+        
+        padding: 0 15px;
+    }
 }
 
 
@@ -659,5 +663,8 @@ nav ul li a:hover {
     .sponsors {
         flex-direction: column;
         gap: 20px;
+    }
+    .our-sponsors .sponsors-des {
+        padding: 0 60px;
     }
 }
