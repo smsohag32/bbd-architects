@@ -8,9 +8,12 @@
     --bg-color: #dcd9d9;
     --bg-secondary: #fff4e7;
     --main-color: #FF900E;
+    --second-color: #06b37c6d;
     --black: #000000;
     --white: #ffff;
     --gray: #727272;
+    --box-shadow: 2px 4px 12px #6db61a6f;
+    --box-shadow2: 0px 0px 20px #0aeed7ec;
 }
 /* universal style 
 ---------------- */
@@ -29,7 +32,7 @@
 --------------------------- */
 .container{
     width: 100%;
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 15px 15px;
 }
@@ -202,7 +205,7 @@ nav ul li a:hover{
     border-radius: 5px;
 }
 .services .btn b{
-    color: white;
+    color: var(--white);
     font-size: 3.5rem;
     font-weight: 700;
 }
@@ -221,14 +224,57 @@ nav ul li a:hover{
 }
 
 .facts{
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 25px;
     text-align: center;
-    margin: 60px 0;
+    margin: 60px 40px;
 }
+/* fact box animation and hover
+-------------------------- */
 .fact{
+    position: relative;
     padding: 40px 35px;
-    border: 1px solid var(--main-color);
+    box-shadow: var(--box-shadow);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.fact:hover{
+    box-shadow: var(--box-shadow2);
+    background: var(--second-color);
+    transition-delay: 0.3s;
+}
+.fact::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-top: 3px solid var(--second-color);
+    border-left: 3px solid var(--second-color);
+    transition: .5s;
+}
+.fact:hover:before{
+    width: 100%;
+    height: 100%;
+}
+.fact::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    border-bottom: 3px solid var(--second-color);
+    border-right: 3px solid var(--second-color);
+    transition: .5s;
+}
+.fact:hover:after{
+    width: 100%;
+    height: 100%;
 }
 .facts .fact-count{
     font-weight: 600;
@@ -259,7 +305,7 @@ nav ul li a:hover{
     padding: 10px;
 }
 .project{
-    box-shadow: 4px 6px 12px rgba(167, 163, 163, 0.298);
+    box-shadow: var(--box-shadow);
     padding: 20px;
 }
 .projects .project-photo img{
@@ -287,7 +333,9 @@ nav ul li a:hover{
     cursor: pointer;
     margin-bottom: 10px;
 }
-
+.project-btn:hover{
+    box-shadow: var(--box-shadow);
+}
 
 /* sponsors section style
 ------------------------- */
@@ -302,8 +350,10 @@ nav ul li a:hover{
 .our-sponsors .sponsors-des{
     text-align: center;
     padding: 0 100px;
+    margin-bottom: 30px;
 }
 .sponsors{
+    margin-top: 30px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -311,6 +361,7 @@ nav ul li a:hover{
 }
 .sponsors .sponsors-logo img{
     filter: grayscale(1);
+    margin-top: 30px;
 }
 
 
@@ -403,12 +454,12 @@ nav ul li a:hover{
         margin-top: 30px;
      }
      .facts{
-        flex-direction: column;
-        gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 30px 4px;
      }
      .fact{
         padding: 20px 5px;
-        margin: 10px 70px;
+        margin: 10px 60px;
     }
     /* Project section responsive
     ----------------------- */
@@ -419,6 +470,7 @@ nav ul li a:hover{
     ------------------------- */
     .sponsors{
         flex-direction: column;
+        gap: 20px;
     }
 }
 
@@ -497,13 +549,13 @@ nav ul li a:hover{
          margin-top: 30px;
       }
       .facts{
-         flex-direction: column;
-         gap: 20px;
-      }
-      .fact{
-         padding: 20px 5px;
-         margin: 10px 70px;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 30px 4px;
      }
+     .fact{
+        padding: 20px 5px;
+        margin: 10px 60px;
+    }
      /* Project section responsive
      ----------------------- */
      .projects{
@@ -513,6 +565,7 @@ nav ul li a:hover{
      ------------------------- */
      .sponsors{
          flex-direction: column;
+         gap: 20px;
      }
  }
  
