@@ -13,7 +13,7 @@
     --white: #ffff;
     --gray: #727272;
     --box-shadow: 2px 4px 12px #6db61a6f;
-    --box-shadow2: 0px 0px 20px #0aeed7ec;
+    --box-shadow2: 0px 0px 20px #03462dec;
 }
 /* universal style 
 ---------------- */
@@ -46,7 +46,13 @@ span{
     border: none;
     font-size: 20px;
     font-weight: 400;
-    border-radius: 35px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+}
+.btn:hover{
+    box-shadow: var(--box-shadow);
+    transition: 0.3s;
 }
 
 /* header nav style
@@ -244,7 +250,7 @@ nav ul li a:hover{
 .fact:hover{
     box-shadow: var(--box-shadow2);
     background: var(--second-color);
-    transition-delay: 0.3s;
+    transition-delay: 0.5s;
 }
 .fact::before{
     content: '';
@@ -307,6 +313,10 @@ nav ul li a:hover{
 .project{
     box-shadow: var(--box-shadow);
     padding: 20px;
+    transition: all 0.5s;
+}
+.project:hover{
+    box-shadow: var(--box-shadow2);
 }
 .projects .project-photo img{
     width: 100%;
@@ -351,6 +361,8 @@ nav ul li a:hover{
     text-align: center;
     padding: 0 100px;
     margin-bottom: 30px;
+    color: var(--gray);
+    font-size: 1rem;
 }
 .sponsors{
     margin-top: 30px;
