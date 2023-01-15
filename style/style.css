@@ -21,7 +21,7 @@
     font-family: var(--primary-font);
     list-style: none;
     text-decoration: none;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 
@@ -220,7 +220,7 @@ nav ul li a:hover{
     margin: 10px 0;
 }
 
-.some-facts .facts{
+.facts{
     display: flex;
     justify-content: space-evenly;
     text-align: center;
@@ -329,21 +329,10 @@ nav ul li a:hover{
 }
 
 
-
-.hide{
-    display: none;
-}
-
-
-
-
-
-
-
 /* Responsive for Mobile device 
 ---------------------------------- */
 
-@media only screen and (max-width: 576px ) {
+@media only screen and (max-width: 576px) {
    /* header responsive
    ----------------- */
     .container{
@@ -410,8 +399,121 @@ nav ul li a:hover{
 
     /* some facts responsive
      -----------------------*/
+     .some-facts{
+        margin-top: 30px;
+     }
      .facts{
         flex-direction: column;
+        gap: 20px;
      }
+     .fact{
+        padding: 20px 5px;
+        margin: 10px 70px;
+    }
+    /* Project section responsive
+    ----------------------- */
+    .projects{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    /* sponsors section responsive
+    ------------------------- */
+    .sponsors{
+        flex-direction: column;
+    }
 }
+
+/* Responsive for Tablet device
+-------------------------------- */
+@media only screen and (max-width: 992px ) {
+    /* header responsive
+    ----------------- */
+     .container{
+         width: 100%;
+         margin: 15px auto;
+         padding: 0 15px;
+     }
+     .header{
+         padding-top: 15px;
+     }
+ 
+     nav{
+         flex-direction: column;
+         gap: 15px;
+     }
+     nav ul{
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+     }
+     nav ul li a {
+         padding: 6px 50px;
+     }
+     .banner-content{
+         padding: 20px 30px;
+     }
+     .banner .banner-title{
+         font-size: 2rem;
+         font-weight: bold;
+         color: var(--black);
+     }
+ 
+     /* feature responsive
+     --------------------- */
+     .features{
+         flex-direction: column;
+     }
+     .features .feature-info{
+         text-align: center;
+         margin-top: 20px;
+     }
+
+     .features .feature-photo{
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+     .feature-info{
+         margin-left: 0px;
+         padding: 10px 10px;
+     }
+     /* service responsive 
+     -------------------*/
+     
+     .services-container{
+         grid-template-columns: repeat(1, 1fr);
+         grid-row-gap: 20px;
+     }
+     .services .service-btn{
+         text-align: center;
+         margin: 20px auto;
+         opacity: 0.9;
+         width: 100%;
+         display: block;
+         padding: 0;
+     }
+ 
+     /* some facts responsive
+      -----------------------*/
+      .some-facts{
+         margin-top: 30px;
+      }
+      .facts{
+         flex-direction: column;
+         gap: 20px;
+      }
+      .fact{
+         padding: 20px 5px;
+         margin: 10px 70px;
+     }
+     /* Project section responsive
+     ----------------------- */
+     .projects{
+         grid-template-columns: repeat(1, 1fr);
+     }
+     /* sponsors section responsive
+     ------------------------- */
+     .sponsors{
+         flex-direction: column;
+     }
+ }
+ 
 
